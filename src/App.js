@@ -24,22 +24,26 @@ function App() {
   return (
     <div className="App">
       <div>
-        <button
-          onClick={() => {
-            setShowEvents(false);
-          }}
-        >
-          <h2>Hide Events</h2>
-        </button>
+        {showEvents && (
+          <button
+            onClick={() => {
+              setShowEvents(false);
+            }}
+          >
+            <h2>Hide Events</h2>
+          </button>
+        )}
       </div>
       <div>
-        <button
-          onClick={() => {
-            setShowEvents(true);
-          }}
-        >
-          <h2>Show Events</h2>
-        </button>
+        {!showEvents && (
+          <button
+            onClick={() => {
+              setShowEvents(true);
+            }}
+          >
+            <h2>Show Events</h2>
+          </button>
+        )}
       </div>
 
       {showEvents &&
