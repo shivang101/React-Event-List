@@ -8,11 +8,15 @@ function App() {
     { title: "Movie with friends", id: 3 },
   ]);
   const handleClick = (id) => {
-    setEvent(
-      event.filter((el) => {
-        return el.id !== id;
-      })
-    );
+    // setEvent(
+    //   event.filter((el) => {
+    //     return el.id !== id;
+    //   })
+    // );
+    setEvent((prevev) => {
+      return prevev.filter((el) => el.id !== id);
+    });
+    console.log(`${id} was removed`);
   };
 
   return (
