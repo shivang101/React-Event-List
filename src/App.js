@@ -20,27 +20,22 @@ function App() {
     });
     console.log(`${id} was removed`);
   };
+  const displayEvents = () => {
+    setShowEvents((prevEvent) => !prevEvent);
+  };
 
   return (
     <div className="App">
       <div>
         {showEvents && (
-          <button
-            onClick={() => {
-              setShowEvents(false);
-            }}
-          >
+          <button onClick={displayEvents}>
             <h2>Hide Events</h2>
           </button>
         )}
       </div>
       <div>
         {!showEvents && (
-          <button
-            onClick={() => {
-              setShowEvents(true);
-            }}
-          >
+          <button onClick={displayEvents}>
             <h2>Show Events</h2>
           </button>
         )}
