@@ -1,9 +1,19 @@
-export default function Title(props) {
+// export default function Title(props) {
+//   return (
+//     <div>
+//       <h1 className="title">{props.title}</h1>
+//       <br />
+//       <h2 className="subtitle">{props.sub}</h2>
+//     </div>
+//   );
+// }
+
+export default function Title({ title, sub }) {
   return (
     <div>
-      <h1 className="title">{props.title}</h1>
+      <h1 className="title">{title}</h1>
       <br />
-      <h2 className="subtitle">{props.sub}</h2>
+      <h2 className="subtitle">{sub}</h2>
     </div>
   );
 }

@@ -30,6 +30,7 @@ function App() {
   return (
     <div className="App">
       <Title title="Events in your Area" sub={subtitle} />
+      <Title title="Another Title" sub="Another Subtitle" />
       <div>
         {showEvents && (
           <button onClick={displayEvents}>
