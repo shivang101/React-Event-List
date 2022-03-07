@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Title from "./components/Title";
 import "./App.css";
 
 function App() {
@@ -24,8 +25,11 @@ function App() {
     setShowEvents((prevEvent) => !prevEvent);
   };
 
+  const subtitle = "All the latest events in mario kingdom";
+
   return (
     <div className="App">
+      <Title title="Events in your Area" sub={subtitle} />
       <div>
         {showEvents && (
           <button onClick={displayEvents}>
