@@ -6,6 +6,12 @@ import Modal from "./components/Modal";
 function App() {
   const [showEvents, setShowEvents] = useState(true);
 
+  const [showModal, setShowModal] = useState(true);
+
+  const handleClose = () => {
+    setShowModal(false);
+  };
+
   const [event, setEvent] = useState([
     { title: "Shivang's birthday party", id: 1 },
     { title: "date with Neha", id: 2 },
@@ -67,16 +73,18 @@ function App() {
         <p>Use the code ninja10 at the checkout</p>
       </Modal> */}
 
-      <Modal>
-        <h2>Terms and Conditions</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error odit
-          nam et reprehenderit quibusdam temporibus officia dolorum quo sint
-          nemo quis, laborum, quasi nisi fugit praesentium debitis repudiandae!
-          Sapiente, omnis.
-        </p>
-        <a href="#">find out more...</a>
-      </Modal>
+      {showModal && (
+        <Modal close={handleClose}>
+          <h2>Terms and Conditions</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error odit
+            nam et reprehenderit quibusdam temporibus officia dolorum quo sint
+            nemo quis, laborum, quasi nisi fugit praesentium debitis
+            repudiandae! Sapiente, omnis.
+          </p>
+          <a href="#">find out more...</a>
+        </Modal>
+      )}
     </div>
   );
 }
