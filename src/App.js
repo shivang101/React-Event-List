@@ -10,7 +10,7 @@ function App() {
   const [showModal, setShowModal] = useState(true);
 
   const handleClose = () => {
-    setShowModal(false);
+    setShowModal((prevState) => !prevState);
   };
 
   const [event, setEvent] = useState([
@@ -61,7 +61,7 @@ function App() {
       </Modal> */}
 
       {showModal && (
-        <Modal close={handleClose}>
+        <Modal close={handleClose} isSalesModal={false}>
           <h2>Terms and Conditions</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error odit
@@ -72,6 +72,7 @@ function App() {
           <a href="#">find out more...</a>
         </Modal>
       )}
+      <button onClick={handleClose}>Show Modal</button>
     </div>
   );
 }
