@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./NewEventForm.css";
 
-export default function NewEventForm() {
+export default function NewEventForm(props) {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
 
@@ -19,6 +19,8 @@ export default function NewEventForm() {
     };
     console.log(data);
     resetForm();
+    props.newInput(data);
+    props.closeModal();
   };
 
   return (

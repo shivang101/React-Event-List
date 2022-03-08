@@ -14,21 +14,14 @@ function App() {
     setShowModal((prevState) => !prevState);
   };
 
-  const [event, setEvent] = useState([
-    { title: "Shivang's birthday party", id: 1 },
-    { title: "date with Neha", id: 2 },
-    { title: "Movie with friends", id: 3 },
-  ]);
+  const [event, setEvent] = useState([]);
   const handleClick = (id) => {
-    // setEvent(
-    //   event.filter((el) => {
-    //     return el.id !== id;
-    //   })
-    // );
     setEvent((prevev) => {
       return prevev.filter((el) => el.id !== id);
     });
-    console.log(`${id} was removed`);
+  };
+  const addEvent = (data) => {
+    setEvent((prevState) => [...prevState, data]);
   };
   const displayEvents = () => {
     setShowEvents((prevEvent) => !prevEvent);
@@ -63,7 +56,7 @@ function App() {
 
       {showModal && (
         <Modal close={handleClose} isSalesModal={true}>
-          <NewEventForm />
+          <NewEventForm newInput={addEvent} closeModal={handleClose} />
         </Modal>
       )}
       <button onClick={handleClose}>Add New Event</button>

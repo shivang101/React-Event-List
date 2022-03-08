@@ -27,7 +27,8 @@ export default function EventList({ event, click }) {
       {event.map((el, index) => (
         <div className={styles.card} key={el.id}>
           <h2>
-            {index + 1} {el.title}
+            {index + 1} on <span style={{ color: "red" }}>{el.date} </span>{" "}
+            {el.title}
           </h2>
           <button
             onClick={() => {
