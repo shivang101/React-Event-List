@@ -8,6 +8,7 @@
 //   );
 // }
 
+import "./Title.css";
 export default function Title({ title, sub }) {
   return (
     <div>
