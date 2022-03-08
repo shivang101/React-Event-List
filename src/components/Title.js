@@ -11,7 +11,7 @@
 import "./Title.css";
 export default function Title({ title, sub }) {
   return (
-    <div>
+    <div className="title-block">
       <h1 className="title">{title}</h1>
       <br />
       <h2 className="subtitle">{sub}</h2>

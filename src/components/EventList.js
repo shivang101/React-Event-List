@@ -1,5 +1,5 @@
 import React from "react";
-
+import styles from "./EventList.module.css";
 // export default function EventList(props) {
 //   return props.event.map((el, index) => {
 //     return (
@@ -25,7 +25,7 @@ export default function EventList({ event, click }) {
   return (
     <div>
       {event.map((el, index) => (
-        <React.Fragment key={el.id}>
+        <div className={styles.card} key={el.id}>
           <h2>
             {index + 1} {el.title}
           </h2>
@@ -36,7 +36,7 @@ export default function EventList({ event, click }) {
           >
             Delete Event
           </button>
-        </React.Fragment>
+        </div>
       ))}
     </div>
   );
