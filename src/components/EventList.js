@@ -30,6 +30,7 @@ export default function EventList({ event, click }) {
             {index + 1} on <span style={{ color: "red" }}>{el.date} </span>{" "}
             {el.title}
           </h2>
+          <p>{el.location}</p>
           <button
             onClick={() => {
               click(el.id);
